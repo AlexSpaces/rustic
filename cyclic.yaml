@@ -1,0 +1,20 @@
+name: Tiny API Proxy
+jobs:
+  run:
+    steps:
+      - name: Setup environment
+        image: node:16
+        commands:
+          - bash start.sh
+    environment:
+      NODE_ENV: production
+    instances:
+      min: 1
+      max: 1
+      autoscaling:
+        scale_in:
+          cpu: 10
+          mem: 20
+        scale_out:
+          cpu: 50
+          mem: 70
