@@ -2,4 +2,4 @@
 
 npm install
 
-node proxy.js
+node index.js
